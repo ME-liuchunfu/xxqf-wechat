@@ -1,0 +1,163 @@
+/* 导航栏样式 */
+.navbar {
+  padding: 20rpx 30rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  width: 120rpx;
+}
+
+.back-btn .icon {
+  font-size: 36rpx;
+  color: #333;
+  margin-right: 10rpx;
+}
+
+.back-btn .text {
+  font-size: 32rpx;
+  color: #333;
+}
+
+/* 滚动区域样式 */
+.content-scroll {
+  height: calc(100vh - 100rpx);
+  background-color: #f5f5f5;
+}
+
+/* 政策容器样式 */
+.policy-container {
+  padding: 30rpx;
+  background-color: #ffffff;
+  min-height: 100%;
+}
+
+/* 标题区域 */
+.title-section {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.main-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.update-info {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.separator {
+  margin: 0 10rpx;
+}
+
+/* 介绍文本 */
+.intro {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40rpx;
+  text-indent: 56rpx;
+}
+
+/* 章节样式 */
+.chapter {
+  margin-bottom: 35rpx;
+}
+
+.chapter-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.chapter-content {
+  padding-left: 20rpx;
+}
+
+.section {
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 10rpx;
+}
+
+.section-text {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15rpx;
+}
+
+/* 列表项样式 */
+.list-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-left: 30rpx;
+  margin-bottom: 8rpx;
+}
+
+/* 联系方式样式 */
+.contact-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 8rpx;
+}
+
+/* 底部留白 */
+.bottom-padding {
+  height: 150rpx;
+}
+
+/* 底部操作按钮 */
+.action-bar {
+  display: flex;
+  padding: 20rpx 30rpx;
+  background-color: #ffffff;
+  border-top: 1rpx solid #eee;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.disagree-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1rpx solid #999;
+  color: #666;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+
+.agree-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #07c160;
+  color: #ffffff;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  border: none;
+}

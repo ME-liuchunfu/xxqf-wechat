@@ -1,0 +1,57 @@
+<view class="login-container">
+  <!-- 顶部装饰元素 -->
+  <view class="top-decoration"></view>
+  
+  <!-- 应用Logo -->
+  <view class="logo-container">
+    <image class="logo" src="/images/logo.png" mode="widthFix" alt="应用Logo"></image>
+    <view class="app-name">欢迎使用小熊恰饭</view>
+    <view class="app-desc">熊熊村恰饭备忘录</view>
+  </view>
+  
+  <!-- 登录表单区域 -->
+  <view class="login-form" wx:if="{{false}}">
+    <!-- 其他登录方式（可选） -->
+    <view class="other-login-methods">
+      <view class="divider">其他登录方式</view>
+      <view class="method-icons">
+        <button class="method-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+          <image src="/images/phone.png" class="method-icon" alt="手机号登录"></image>
+          <text>手机号登录</text>
+        </button>
+        <button class="method-btn" bindtap="toAccountLogin">
+          <image src="/images/account.png" class="method-icon" alt="账号密码登录"></image>
+          <text>账号密码</text>
+        </button>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 一键登录按钮 -->
+  <view class="login-btn-container">
+    <button 
+      class="wechat-login-btn" 
+      bindtap="wechatLogin"
+      hover-class="login-btn-hover"
+    >
+      <image src="/images/wechat.png" class="wechat-icon" alt="微信登录"></image>
+      <text>微信一键登录</text>
+    </button>
+  </view>
+  
+  <!-- 底部条款 -->
+  <view class="agreement">
+    <text>登录即表示同意</text>
+    <view class="agreement-wrap">
+        <navigator url="/pages/agreement/user/agreement" class="agreement-link">《用户协议》</navigator>
+        <text>和</text>
+        <navigator url="/pages/agreement/privacy/privacy" class="agreement-link">《隐私政策》</navigator>
+    </view>
+    
+  </view>
+  
+  <!-- 登录成功提示 -->
+  <view wx:if="{{showSuccess}}" class="success-toast">
+    <text>登录成功，正在进入...</text>
+  </view>
+</view>

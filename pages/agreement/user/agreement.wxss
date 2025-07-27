@@ -1,0 +1,132 @@
+/* 页面整体样式 */
+page {
+  background-color: #f5f5f5;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* 滚动区域样式 */
+.agreement-scroll {
+  height: calc(100vh - 50px); /* 减去底部按钮高度 */
+  width: 100%;
+}
+
+/* 内容容器 */
+.agreement-container {
+  padding: 20rpx 30rpx;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* 标题样式 */
+.agreement-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30rpx;
+  color: #000000;
+}
+
+/* 生效日期 */
+.effective-date {
+  text-align: center;
+  color: #666666;
+  margin-bottom: 30rpx;
+  font-size: 13px;
+}
+
+/* 欢迎语 */
+.welcome-text {
+  margin-bottom: 30rpx;
+  text-indent: 2em;
+}
+
+/* 章节样式 */
+.chapter {
+  margin-bottom: 30rpx;
+}
+
+/* 章节标题 */
+.chapter-title {
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  color: #000000;
+  font-size: 15px;
+}
+
+/* 章节内容 */
+.chapter-content {
+  padding-left: 20rpx;
+}
+
+/* 段落样式 */
+.paragraph {
+  margin-bottom: 15rpx;
+  text-indent: 2em;
+}
+
+/* 列表项样式 */
+.list-item {
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  position: relative;
+}
+
+.list-item:before {
+  content: "";
+  position: absolute;
+  left: 15rpx;
+  top: 10rpx;
+  width: 4rpx;
+  height: 4rpx;
+  border-radius: 50%;
+  background-color: #333333;
+}
+
+/* 底部留白 */
+.bottom-margin {
+  height: 80rpx;
+}
+
+/* 底部按钮栏 */
+.button-bar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+}
+
+/* 不同意按钮 */
+.disagree-btn {
+  flex: 1;
+  height: 100%;
+  background-color: #ffffff;
+  color: #666666;
+  border: none;
+  border-right: 1px solid #eeeeee;
+  font-size: 16px;
+}
+
+/* 同意按钮 */
+.agree-btn {
+  flex: 1;
+  height: 100%;
+  background-color: #07c160;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+}
+
+/* 按钮激活样式 */
+.disagree-btn:active {
+  background-color: #f5f5f5;
+}
+
+.agree-btn:active {
+  background-color: #06b054;
+}

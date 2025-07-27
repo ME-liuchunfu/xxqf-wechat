@@ -1,0 +1,107 @@
+<!-- 协议内容滚动区域 -->
+<scroll-view class="agreement-scroll" scroll-y>
+  <view class="agreement-container">
+    <!-- 标题 -->
+    <view class="agreement-title">用户服务协议</view>
+    
+    <!-- 生效日期 -->
+    <view class="effective-date">生效日期：2025年7月1日</view>
+    
+    <!-- 欢迎语 -->
+    <view class="welcome-text">
+      欢迎使用本小程序服务！本协议是您与本小程序运营方（以下简称"我们"）之间关于您使用本小程序及相关服务所订立的协议。请您仔细阅读本协议，如您对本协议有任何疑问，可向我们咨询。如您不同意本协议的任何内容，您应立即停止使用本服务。
+    </view>
+    
+    <!-- 协议章节 -->
+    <view class="chapter">
+      <view class="chapter-title">一、定义与范围</view>
+      <view class="chapter-content">
+        <view class="paragraph">1.1 "本服务"指我们提供的小程序相关服务，包括但不限于信息展示、交互功能等。</view>
+        <view class="paragraph">1.2 "用户"指使用本服务的个人或组织，在本协议中称为"您"。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">二、服务条款</view>
+      <view class="chapter-content">
+        <view class="paragraph">2.1 我们有权根据业务需要调整服务内容，如有重大变更将通过适当方式通知您。</view>
+        <view class="paragraph">2.2 您理解并同意，本服务可能会因系统维护、升级等原因暂停服务，我们将尽可能提前通知您。</view>
+        <view class="paragraph">2.3 您需自行配备使用本服务所需的设备（如手机）和网络，并承担相关费用。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">三、用户行为规范</view>
+      <view class="chapter-content">
+        <view class="paragraph">3.1 您在使用本服务时，应遵守国家法律法规、社会公德，不得利用本服务从事任何违法违规活动。</view>
+        <view class="paragraph">3.2 您不得利用本服务发布、传播含有下列内容的信息：</view>
+        <view class="list-item">（1）违反国家法律法规的；</view>
+        <view class="list-item">（2）危害国家安全、泄露国家秘密的；</view>
+        <view class="list-item">（3）侮辱、诽谤他人，侵害他人合法权益的；</view>
+        <view class="list-item">（4）含有淫秽、色情、暴力等不健康内容的；</view>
+        <view class="list-item">（5）其他违反公序良俗的内容。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">四、知识产权</view>
+      <view class="chapter-content">
+        <view class="paragraph">4.1 本小程序的所有知识产权归我们所有，包括但不限于著作权、商标权、专利权等。</view>
+        <view class="paragraph">4.2 未经我们书面许可，您不得擅自使用、复制、修改、传播本小程序的任何内容。</view>
+        <view class="paragraph">4.3 您在本小程序上发布的内容，知识产权归您所有，但您授予我们免费、非独家、可转授权的使用权。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">五、隐私保护</view>
+      <view class="chapter-content">
+        <view class="paragraph">5.1 我们重视您的隐私保护，将按照《隐私政策》处理您的个人信息。</view>
+        <view class="paragraph">5.2 您同意我们按照《隐私政策》收集、使用、存储和保护您的个人信息。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">六、免责声明</view>
+      <view class="chapter-content">
+        <view class="paragraph">6.1 本服务按"现状"提供，我们不保证服务无瑕疵、无错误或不间断。</view>
+        <view class="paragraph">6.2 因不可抗力、网络问题等非我们原因导致您无法使用本服务的，我们不承担责任。</view>
+        <view class="paragraph">6.3 您因使用本服务而产生的任何风险，由您自行承担。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">七、协议的变更与终止</view>
+      <view class="chapter-content">
+        <view class="paragraph">7.1 我们有权根据法律法规变化和业务发展需要修改本协议，修改后将在小程序内公布。</view>
+        <view class="paragraph">7.2 如您继续使用本服务，视为您同意修改后的协议。如您不同意，应停止使用本服务。</view>
+        <view class="paragraph">7.3 如您违反本协议，我们有权暂停或终止向您提供服务。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">八、法律适用与争议解决</view>
+      <view class="chapter-content">
+        <view class="paragraph">8.1 本协议适用中华人民共和国法律。</view>
+        <view class="paragraph">8.2 因本协议引起的争议，双方应协商解决；协商不成的，任何一方可向我们所在地有管辖权的法院提起诉讼。</view>
+      </view>
+    </view>
+    
+    <view class="chapter">
+      <view class="chapter-title">九、其他</view>
+      <view class="chapter-content">
+        <view class="paragraph">9.1 本协议构成您与我们之间的完整协议，取代之前的所有约定。</view>
+        <view class="paragraph">9.2 如本协议任何条款无效，不影响其他条款的效力。</view>
+        <view class="paragraph">9.3 如您有任何问题，可通过小程序内的联系方式与我们联系。</view>
+      </view>
+    </view>
+    
+    <!-- 底部留白，避免被按钮遮挡 -->
+    <view class="bottom-margin"></view>
+  </view>
+</scroll-view>
+
+<!-- 底部操作按钮 -->
+<!-- <view class="button-bar">
+  <button class="disagree-btn" bindtap="onDisagree">不同意</button>
+  <button class="agree-btn" bindtap="onAgree">同意</button>
+</view> -->
