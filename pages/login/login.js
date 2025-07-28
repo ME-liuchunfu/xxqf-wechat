@@ -58,7 +58,7 @@ Page({
         // 登录成功，保存token
         wx.setStorage({
             key: 'token',
-            data: res.data.data.token
+            data: data.token
           });
           
           // 显示成功提示
