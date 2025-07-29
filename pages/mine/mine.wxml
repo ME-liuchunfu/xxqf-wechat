@@ -1,0 +1,85 @@
+<!-- 顶部用户信息 -->
+<view class="user-header">
+  <view class="user-avatar-area" bindtap="handleAvatarClick">
+    <image 
+      class="avatar" 
+      src="{{userInfo.avatarUrl || '/images/logo.png'}}" 
+      mode="widthFix"
+      lazy-load
+    ></image>
+    <view class="user-info">
+      <view class="nickname">{{userInfo.nickName || '未登录'}}</view>
+      <view class="user-desc">{{userInfo.signature || '点击头像登录/编辑资料'}}</view>
+    </view>
+  </view>
+  
+  <view class="user-actions">
+    <view class="action-item" bindtap="navToOrder">
+      <view class="action-icon">
+        <text class="icon">📦</text>
+      </view>
+      <view class="action-text">我的订单</view>
+    </view>
+    <view class="action-item" bindtap="navToCollection">
+      <view class="action-icon">
+        <text class="icon">⭐</text>
+      </view>
+      <view class="action-text">我的收藏</view>
+    </view>
+    <view class="action-item" bindtap="navToMessage">
+      <view class="action-icon">
+        <text class="icon">💬</text>
+        <view class="badge" wx:if="{{unreadCount > 0}}">{{unreadCount}}</view>
+      </view>
+      <view class="action-text">消息通知</view>
+    </view>
+  </view>
+</view>
+
+<!-- 功能菜单 -->
+<view class="menu-list">
+  <view class="menu-section">
+    <view class="menu-item" bindtap="navToProfile">
+      <view class="menu-icon">👤</view>
+      <view class="menu-text">个人资料</view>
+      <view class="menu-arrow">→</view>
+    </view>
+    <view class="menu-item" bindtap="navToAddress">
+      <view class="menu-icon">📍</view>
+      <view class="menu-text">收货地址</view>
+      <view class="menu-arrow">→</view>
+    </view>
+    <view class="menu-item" bindtap="navToWallet">
+      <view class="menu-icon">💰</view>
+      <view class="menu-text">我的钱包</view>
+      <view class="menu-arrow">→</view>
+    </view>
+  </view>
+  
+  <view class="menu-section">
+    <view class="menu-item" bindtap="navToSetting">
+      <view class="menu-icon">⚙️</view>
+      <view class="menu-text">设置</view>
+      <view class="menu-arrow">→</view>
+    </view>
+    <view class="menu-item" bindtap="navToHelp">
+      <view class="menu-icon">❓</view>
+      <view class="menu-text">帮助与反馈</view>
+      <view class="menu-arrow">→</view>
+    </view>
+    <view class="menu-item" bindtap="navToAbout">
+      <view class="menu-icon">ℹ️</view>
+      <view class="menu-text">关于我们</view>
+      <view class="menu-arrow">→</view>
+    </view>
+  </view>
+</view>
+
+<!-- 退出登录按钮 -->
+<view 
+  class="logout-btn" 
+  bindtap="handleLogout" 
+  wx:if="{{isLogin}}"
+>
+  退出登录
+</view>

@@ -22,7 +22,6 @@ const requestInterceptor = (config) => {
 
 // 响应拦截器
 const responseInterceptor = (response) => {
-    debugger
   // 隐藏加载提示
   if (response.config.showLoading) {
     wx.hideLoading();

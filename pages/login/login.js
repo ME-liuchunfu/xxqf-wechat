@@ -3,7 +3,8 @@ const loginApi = require('../../utils/api/loginapi.js')
 
 Page({
   data: {
-    showSuccess: false   // 登录成功提示
+    showSuccess: false,   // 登录成功提示
+    homePage: '/pages/index/index'
   },
 
   onLoad() {
@@ -18,9 +19,10 @@ Page({
       success: (res) => {
         // 如果已有token，直接跳转到首页
         if (res.data) {
-          wx.switchTab({
-            url: '/pages/index/index'
-          });
+            loginApi.ping()
+            .then(res=>{
+                wx.switchTab({url: this.homePage});
+            })
         }
       }
     });
@@ -56,18 +58,14 @@ Page({
     .then(data=>{
         console.log('login response', data)
         // 登录成功，保存token
-        wx.setStorage({
-            key: 'token',
-            data: data.token
-          });
+        wx.setStorage({key: 'token', data: data.token});
           
           // 显示成功提示
-          that.setData({
-            showSuccess: true
-          });
+          that.setData({showSuccess: true});
           
           // 延迟跳转到首页
           setTimeout(() => {
+              debugger
             wx.switchTab({
               url: '/pages/index/index'
             });

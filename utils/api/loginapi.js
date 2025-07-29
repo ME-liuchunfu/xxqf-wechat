@@ -9,6 +9,14 @@ const login = (data={}) =>{
     )
 }
 
+const ping = () => {
+    return request.post(
+        '/xxqf/wechat/ping'
+    )
+}
+
+
 module.exports = {
-    login
+    login,
+    ping
 }
