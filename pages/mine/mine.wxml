@@ -13,12 +13,12 @@
     </view>
   </view>
   
-  <view class="user-actions">
+  <view class="user-actions"  wx:if="{{false}}">
     <view class="action-item" bindtap="navToOrder">
       <view class="action-icon">
         <text class="icon">📦</text>
       </view>
-      <view class="action-text">我的订单</view>
+      <view class="action-text">我的</view>
     </view>
     <view class="action-item" bindtap="navToCollection">
       <view class="action-icon">
@@ -56,7 +56,7 @@
     </view>
   </view>
   
-  <view class="menu-section">
+  <view class="menu-section" wx:if="{{false}}">
     <view class="menu-item" bindtap="navToSetting">
       <view class="menu-icon">⚙️</view>
       <view class="menu-text">设置</view>
@@ -67,11 +67,7 @@
       <view class="menu-text">帮助与反馈</view>
       <view class="menu-arrow">→</view>
     </view>
-    <view class="menu-item" bindtap="navToAbout">
-      <view class="menu-icon">ℹ️</view>
-      <view class="menu-text">关于我们</view>
-      <view class="menu-arrow">→</view>
-    </view>
+   
   </view>
 </view>
 

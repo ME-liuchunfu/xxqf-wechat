@@ -65,7 +65,6 @@ Page({
           
           // 延迟跳转到首页
           setTimeout(() => {
-              debugger
             wx.switchTab({
               url: '/pages/index/index'
             });

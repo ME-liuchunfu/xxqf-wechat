@@ -3,11 +3,6 @@ const loginApi = require('utils/api/loginapi.js')
 
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     wx.getStorage({
         key: 'token',
         success: (res) => {

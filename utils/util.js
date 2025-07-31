@@ -14,6 +14,22 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+const checkLoginStatus = ()=>{
+    const token = wx.getStorageSync('token');
+    if (!token) {
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+    } 
+}
+
+const getToken = ()=>{
+    const token = wx.getStorageSync('token');
+    return token;
+}
+
 module.exports = {
-  formatTime
+  formatTime,
+  checkLoginStatus,
+  getToken
 }
