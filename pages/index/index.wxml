@@ -1,6 +1,37 @@
-<!--index.wxml-->
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-  
+<view class="container">
+  <!-- 列表容器 -->
+  <view class="list-container">
+    <!-- 列表项循环渲染 -->
+    <view class="list-group" wx:for="{{listData}}" wx:key="date">
+      <!-- 日期和星期头部 -->
+      <view class="date-header">
+        <text class="date">{{item.daliyDay}}</text>
+        <text class="week">{{item.weekName}}</text>
+      </view>
+
+      <!-- 数据项列表 -->
+      <view class="items-container">
+        <view class="data-item" wx:for="{{item.dailyRecordItems}}" wx:key="id" wx:for-item="dataItem">
+          <image
+            class="item-image"
+            src="{{firstUrl(dataItem.urls)}}"
+            mode="aspectFill"
+            lazy-load="true"
+            alt="{{dataItem.title}}">
+          </image>
+          <text class="item-title">{{dataItem.title}}</text>
+        </view>
+      </view>
+    </view>
   </view>
-</scroll-view>
+
+  <!-- 加载中提示 -->
+  <view class="loading-tip" wx:if="{{isLoading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 空数据提示 -->
+  <view class="empty-tip" wx:if="{{!isLoading && listData.length === 0}}">
+    <text>暂无数据</text>
+  </view>
+</view>
