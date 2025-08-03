@@ -47,6 +47,12 @@ Page({
     })
   },
 
+  navToGroup() {
+    wx.navigateTo({
+        url: '/pages/group/group',
+      });
+  },
+
   /**
    * 退出登录
    */

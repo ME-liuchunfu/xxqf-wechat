@@ -9,6 +9,7 @@
     ></image>
     <view class="user-info">
       <view class="nickname">{{userInfo.nickName || '未登录'}}</view>
+      <view class="user-desc">{{userInfo.uuid || ''}}</view>
       <view class="user-desc">{{userInfo.signature || '点击头像登录/编辑资料'}}</view>
     </view>
   </view>
@@ -44,12 +45,17 @@
       <view class="menu-text">个人资料</view>
       <view class="menu-arrow">→</view>
     </view>
-    <view class="menu-item" bindtap="navToAddress">
+    <view class="menu-item" bindtap="navToGroup">
+      <view class="menu-icon">📍</view>
+      <view class="menu-text">我的分组</view>
+      <view class="menu-arrow">→</view>
+    </view>
+    <view class="menu-item" bindtap="navToAddress" wx:if="{{ false }}">
       <view class="menu-icon">📍</view>
       <view class="menu-text">收货地址</view>
       <view class="menu-arrow">→</view>
     </view>
-    <view class="menu-item" bindtap="navToWallet">
+    <view class="menu-item" bindtap="navToWallet" wx:if="{{ false }}">
       <view class="menu-icon">💰</view>
       <view class="menu-text">我的钱包</view>
       <view class="menu-arrow">→</view>

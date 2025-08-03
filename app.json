@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/addDish/addDish",
+    "pages/group/group",
     "pages/agreement/user/agreement",
     "pages/agreement/privacy/privacy",
     "pages/logs/logs"

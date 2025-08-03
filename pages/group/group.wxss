@@ -1,0 +1,146 @@
+.container {
+    padding: 20rpx;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: block;
+  }
+
+  .group-list {
+      width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  
+  .group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 25rpx 30rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+  }
+  
+  .group-name {
+    font-size: 32rpx;
+    color: #333;
+  }
+
+  .group-actions{
+      display: flex;
+      flex-direction: row;
+    width: 160rpx;
+    gap: 10rpx;
+  }
+
+  .yao-btn {
+      padding: 0;
+    color: #07c160;
+    background-color: transparent;
+    font-size: 28rpx;
+  }
+  
+  .delete-btn {
+    padding: 0;
+    color: #ff4d4f;
+    background-color: transparent;
+    font-size: 28rpx;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 100rpx 0;
+    color: #999;
+    font-size: 30rpx;
+  }
+  
+  /* 弹窗样式 */
+  .dialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+  
+  .dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600rpx;
+    background-color: white;
+    border-radius: 16rpx;
+    padding: 40rpx;
+    z-index: 1001;
+  }
+  
+  .dialog-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+    text-align: center;
+    color: #333;
+  }
+  
+  .dialog-input {
+    width: 100%;
+    height: 80rpx;
+    border: 2rpx solid #eee;
+    border-radius: 8rpx;
+    padding: 0 20rpx;
+    font-size: 30rpx;
+    margin-bottom: 40rpx;
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .dialog-btn {
+    width: 200rpx;
+    height: 70rpx;
+    line-height: 50rpx;
+    font-size: 30rpx;
+    border-radius: 8rpx;
+  }
+  
+  .cancel {
+    background-color: #f5f5f5;
+    color: #666;
+  }
+  
+  .confirm {
+    background-color: #07c160;
+    color: white;
+  }
+      
+  .action-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 20rpx;
+    position: fixed;
+    bottom: 100rpx;
+    right: 20rpx;
+  }
+
+.add-btn{
+    width: 80rpx;
+    height: 80rpx;
+    box-shadow: 0 0 50rpx 4rpx #07c160;
+    border-radius: 50%;
+    z-index: 999;
+    text-align: center;
+    line-height: 70rpx;
+    font-size: 50rpx;
+    color: #07c160;
+}
+
+.y-btn{
+    font-size: 40rpx;
+    line-height: 80rpx;
+}
