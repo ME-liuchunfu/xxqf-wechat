@@ -2,7 +2,7 @@
   <!-- 列表容器 -->
   <view class="list-container">
     <!-- 列表项循环渲染 -->
-    <view class="list-group" wx:for="{{listData}}" wx:key="date">
+    <view class="list-group" wx:for="{{dataList}}" wx:key="date">
       <!-- 日期和星期头部 -->
       <view class="date-header">
         <text class="date">{{item.daliyDay}}</text>
@@ -14,7 +14,7 @@
         <view class="data-item" wx:for="{{item.dailyRecordItems}}" wx:key="id" wx:for-item="dataItem">
           <image
             class="item-image"
-            src="{{firstUrl(dataItem.urls)}}"
+            src="{{ dataItem.urls }}"
             mode="aspectFill"
             lazy-load="true"
             alt="{{dataItem.title}}">
@@ -31,7 +31,7 @@
   </view>
 
   <!-- 空数据提示 -->
-  <view class="empty-tip" wx:if="{{!isLoading && listData.length === 0}}">
+  <view class="empty-tip" wx:if="{{!isLoading && dataList.length === 0}}">
     <text>暂无数据</text>
   </view>
 </view>

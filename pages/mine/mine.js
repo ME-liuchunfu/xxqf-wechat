@@ -14,7 +14,7 @@ Page({
     util.checkLoginStatus();
     mineapi.getInfo().then(res=>{
         this.setData({
-            userInfo: res
+            userInfo: res.data
         })
     })
   },
@@ -24,7 +24,7 @@ Page({
     util.checkLoginStatus();
     mineapi.getInfo().then(res=>{
         this.setData({
-            userInfo: res
+            userInfo: res.data
         })
     })
   },
@@ -39,6 +39,12 @@ Page({
         url: '/pages/login/login'
       });
     } 
+  },
+
+  addDish() {
+    wx.navigateTo({
+      url: '/pages/addDish/addDish',
+    })
   },
 
   /**

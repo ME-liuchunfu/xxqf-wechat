@@ -1,5 +1,11 @@
 // 基础API地址
 const BASE_URL = 'http://192.168.31.169:8080';
+const DOWN_FILE_URL = `${BASE_URL}/xxqf/disk/info/get`
+
+const join_uri = (uri)=>{
+    return `${DOWN_FILE_URL}?uri=${uri}`;
+}
+
 
 // 请求拦截器
 const requestInterceptor = (config) => {
@@ -31,7 +37,7 @@ const responseInterceptor = (response) => {
   const res = response.data;
   if (res.code === 200) {
     // 成功状态
-    return res.data;
+    return res;
   } else if (res.code === 401) {
     // 未授权，需要重新登录
     wx.showToast({
@@ -175,8 +181,21 @@ const del = (url, data = {}, options = {}) => {
   });
 };
 
+
+const headers = ()=>{
+    const hd = {}
+    const token = wx.getStorageSync('token');
+    if (token) {
+        hd['Authorization'] = `Bearer ${token}`;
+    }
+    return hd;
+}
+
 // 导出请求方法
 module.exports = {
+    BASE_URL,
+    headers,
+    join_uri,
   request,
   get,
   post,

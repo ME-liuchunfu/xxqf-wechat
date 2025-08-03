@@ -55,7 +55,8 @@ Page({
     const that = this;
     
     loginApi.login({"code": code})
-    .then(data=>{
+    .then(res=>{
+        let data = res.data
         console.log('login response', data)
         // 登录成功，保存token
         wx.setStorage({key: 'token', data: data.token});

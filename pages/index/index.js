@@ -1,5 +1,6 @@
 const util = require('../../utils/util.js')
 const indexapi = require('../../utils/api/indexapi.js')
+const request = require('../../utils/requestapi.js')
 
 Page({
     data: {
@@ -37,7 +38,18 @@ Page({
         });
 
         indexapi.dailyList().then(res => {
-            this.setData({dataList: res.rows, isLoading: false})
+            let rows = res.rows || [];
+            if (rows) {
+                rows.forEach(item=>{
+                    if (item.dailyRecordItems) {
+                        item.dailyRecordItems.forEach(it=>{
+                            it.urls = this.firstUrl(it.urls);
+                        });
+                    }
+                })
+                console.log(rows);
+            }
+            this.setData({dataList: rows, isLoading: false})
             // 停止下拉刷新动画（如果是刷新操作）
             if (isRefresh) {
                 wx.stopPullDownRefresh();
@@ -54,7 +66,8 @@ Page({
     firstUrl(urls) {
         if (urls) {
             const url_arr = urls.split("|||")
-            return url_arr.length > 0 ? url_arr[0] : '';
+            let uri = url_arr.length > 0 ? url_arr[0] : ''
+            return request.join_uri(uri);
         }
         return ''
     }
