@@ -1,5 +1,6 @@
 // 基础API地址
-const BASE_URL = 'http://192.168.31.169:8080';
+// const BASE_URL = 'http://192.168.31.169:8080';
+const BASE_URL = 'https://xxqf.creat.xin';
 const DOWN_FILE_URL = `${BASE_URL}/xxqf/disk/info/get`
 
 const join_uri = (uri)=>{
