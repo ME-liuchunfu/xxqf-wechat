@@ -7,7 +7,7 @@
     "pages/group/group",
     "pages/agreement/user/agreement",
     "pages/agreement/privacy/privacy",
-    "pages/logs/logs"
+    "pages/selectfool/selectfool"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -28,7 +28,7 @@
         "selectedIconPath": "images/tab/act_shouye.png" 
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/selectfool/selectfool",
         "text": "record",
         "iconPath": "images/tab/detail.png",
         "selectedIconPath": "images/tab/act_detail.png"

@@ -1,4 +1,3 @@
-const { post } = require('../requestapi.js');
 const request = require('../requestapi.js')
 
 const menuTypeDatas = ()=>{

@@ -1,0 +1,109 @@
+<!-- 主容器 -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="header">
+    <text class="title">菜品菜单</text>
+    <view class="pocket-btn" bindtap="showPocket">
+      <image src="/images/koudai.png" mode="widthFix" class="bag-icon"></image>
+      <view class="badge" wx:if="{{pocketTotalCount > 0}}">{{pocketTotalCount}}</view>
+    </view>
+  </view>
+  
+  <!-- 主内容区 -->
+  <view class="main-content">
+    <!-- 左侧分类 -->
+    <view class="category-list">
+      <view 
+        class="category-item {{currentCategoryId === category.id ? 'active' : ''}}"
+        wx:for="{{menuData}}" 
+        wx:key="id"
+        wx:for-item="category"
+        bindtap="switchCategory"
+        data-id="{{category.id}}"
+      >
+        <text>{{category.name}}</text>
+      </view>
+    </view>
+    
+    <!-- 右侧菜品列表 -->
+    <view class="dish-list">
+      <view class="dish-item" wx:for="{{currentDishes}}" wx:key="id">
+        <image src="{{item.image}}" mode="widthFix" class="dish-image"></image>
+        <view class="dish-info">
+          <text class="dish-name">{{item.name}}</text>
+          <text class="dish-desc">{{item.description? item.description : ''}}</text>
+        </view>
+        <view class="dish-actions">
+          <view class="counter" wx:if="{{isInPocket(item.id)}}">
+            <view class="btn minus" bindtap="decreaseCount" data-id="{{item.id}}">-</view>
+            <text class="count">{{getPocketItemCount(item.id)}}</text>
+            <view class="btn plus" bindtap="increaseCount" data-id="{{item.id}}">+</view>
+          </view>
+          <view class="add-btn" wx:else bindtap="addToPocket" data-id="{{item.id}}">+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 口袋侧边栏 -->
+  <view class="pocket-sidebar {{showPocketSidebar ? 'show' : ''}}">
+    <view class="sidebar-header">
+      <text class="sidebar-title">我的口袋</text>
+      <view class="close-btn" bindtap="hidePocket">×</view>
+    </view>
+    
+    <view class="sidebar-content">
+      <view wx:if="{{pocket.length === 0}}" class="empty-pocket">
+        <image src="/images/koudai.png" mode="widthFix" class="empty-icon"></image>
+        <text class="empty-text">口袋是空的</text>
+      </view>
+      
+      <view class="pocket-item" wx:for="{{pocket}}" wx:key="id">
+        <image src="{{item.image}}" mode="widthFix" class="pocket-item-image"></image>
+        <view class="pocket-item-info">
+          <text class="pocket-item-name">{{item.name}}</text>
+        </view>
+        <view class="counter">
+          <view class="btn minus" bindtap="decreaseCount" data-id="{{item.id}}">-</view>
+          <text class="count">{{item.count}}</text>
+          <view class="btn plus" bindtap="increaseCount" data-id="{{item.id}}">+</view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="sidebar-footer">
+      <view class="zhou-date">
+          <view>
+            <picker mode="date" value="{{selectedDate}}" start="{{selectedDate}}" bindchange="bindDateChange">
+                <view class="picker">
+                当前选择: <text class="normal-text">{{ selectedDate }}</text>
+                </view>
+            </picker>
+          </view>
+          <view>
+            <text>当前:</text>
+            <text class="normal-text">{{ selectedZhou }}</text>
+          </view>
+      </view>
+      <view class="total-amount" wx:if="{{ false }}">
+        <text>合计:</text>
+        <text>
+            <text class="amount">{{ pocket.length }}</text>样
+        </text>
+      </view>
+      <view class="confirm-btn" bindtap="okPushData">确认选择</view>
+    </view>
+  </view>
+  
+  <!-- 引入日期选择器组件 -->
+  <date-picker 
+    visible="{{showDatePicker}}" 
+    title="请选择日期"
+    default-date="{{selectedDate}}"
+    bind:confirm="onDateConfirm"
+    bind:cancel="onDateCancel"
+  ></date-picker>
+
+  <!-- 遮罩层 -->
+  <view class="overlay {{showPocketSidebar ? 'show' : ''}}" bindtap="hidePocket"></view>
+</view>

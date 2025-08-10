@@ -9,7 +9,7 @@
     ></image>
     <view class="user-info">
       <view class="nickname">{{userInfo.nickName || '未登录'}}</view>
-      <view class="user-desc">{{userInfo.uuid || ''}}</view>
+      <view class="user-desc">编号:{{userInfo.uuid || ''}}</view>
       <view class="user-desc">{{userInfo.signature || '点击头像登录/编辑资料'}}</view>
     </view>
   </view>

@@ -5,12 +5,23 @@ const request = require('../../utils/requestapi.js')
 Page({
     data: {
         dataList: [],
-        isLoading: false
+        isLoading: false,
+        nowDateStr: '',
+        timer: null
     },
 
     onLoad() {
         // 页面加载时检查登录状态
         util.checkLoginStatus();
+        if (this.timer) {
+            clearInterval(this.timer);
+        }
+        let timer = setInterval(()=>{
+            let dateStr = this.nowDate();
+            this.setData({"nowDateStr": dateStr});
+        }, 1000);
+        this.setData({'timer': timer});
+
         this.loadData();
     },
 
@@ -43,7 +54,9 @@ Page({
                 rows.forEach(item=>{
                     if (item.dailyRecordItems) {
                         item.dailyRecordItems.forEach(it=>{
+                            let allUrl = it.urls;
                             it.urls = this.firstUrl(it.urls);
+                            it.allUrl = allUrl;
                         });
                     }
                 })
@@ -70,6 +83,19 @@ Page({
             return request.join_uri(uri);
         }
         return ''
+    },
+
+    nowDate() {
+        return util.formatTime_cn(new Date());
+    },
+
+    previewImg(e) {
+        // console.log(e)
+        let all = e.currentTarget.dataset.urls;
+        wx.previewImage({
+            current: e.currentTarget.dataset.url, // 当前显示图片的http链接
+            urls: all.split("|||").map(u=>request.join_uri(u)) // 需要预览的图片http链接列表
+          })
     }
 
 })

@@ -1,6 +1,7 @@
 <view class="container">
   <!-- 列表容器 -->
   <view class="list-container">
+    <view class="time-line-notie">{{ nowDateStr }}</view>
     <!-- 列表项循环渲染 -->
     <view class="list-group" wx:for="{{dataList}}" wx:key="date">
       <!-- 日期和星期头部 -->
@@ -15,8 +16,11 @@
           <image
             class="item-image"
             src="{{ dataItem.urls }}"
+            data-url="{{ dataItem.urls }}"
+            data-urls="{{ dataItem.allUrl }}"
             mode="aspectFill"
             lazy-load="true"
+            bindtap="previewImg"
             alt="{{dataItem.title}}">
           </image>
           <text class="item-title">{{dataItem.title}}</text>
