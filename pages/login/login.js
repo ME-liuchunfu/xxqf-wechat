@@ -31,10 +31,14 @@ Page({
   // 微信一键登录
   wechatLogin() {
     const that = this;
-    
+    wx.showLoading({
+        title: '请求中...',
+        mask: true
+      });
     // 调用微信登录接口
     wx.login({
       success: (loginRes) => {
+        wx.hideLoading();
         if (loginRes.code) {
           // 拿到code后，发送到后端换取token
           that.requestLogin(loginRes.code);
@@ -44,6 +48,7 @@ Page({
         }
       },
       fail: (err) => {
+        wx.hideLoading();
         console.error('登录接口调用失败：', err);
         that.showToast('登录失败，请检查网络');
       }

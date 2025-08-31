@@ -40,7 +40,7 @@
   </view>
   
   <!-- 底部条款 -->
-  <view class="agreement">
+  <view class="agreement" wx:if="{{false}}">
     <text>登录即表示同意</text>
     <view class="agreement-wrap">
         <navigator url="/pages/agreement/user/agreement" class="agreement-link">《用户协议》</navigator>
